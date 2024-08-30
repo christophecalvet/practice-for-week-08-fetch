@@ -6,12 +6,14 @@ Paste your code for fetch requests here once you finish each task.
 /* =============== 1. Print the status code of the response =============== */
 
 // Your code here
-
+fetch('/products').then(res => console.log(res.status) )
 
 
 /* ====== 2. Print true if the status of the response was successful ====== */
 
 // Your code here
+
+fetch('/products').then(res => console.log(res.ok) )
 
 
 
@@ -19,8 +21,17 @@ Paste your code for fetch requests here once you finish each task.
 
 // Your code here
 
+fetch('/products').then(res => console.log(res.headers.get("Content-Type")) )
 
 
 /* ============== 4. Print the body of the response as text =============== */
 
 // Your code here
+async function mytest(){
+   readableStream = await fetch('/products')
+   bodytext = await readableStream.text();
+   console.log(bodytext)
+}
+mytest()
+
+//Works. (Could have used then instead.)
